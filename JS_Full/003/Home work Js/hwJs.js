@@ -15,20 +15,26 @@ var appData =
 //     a4 = prompt('Во сколько обойдется?');
 // appData.expenses.a1 = a2;
 // appData.expenses.a3 = a4;
-
 for (let i = 0; i < 2; i++)
 {
     let a = prompt('Введите обязательную статью расходов в этом месяце');
-        b = prompt('Во сколько обойдется?');
+        b = +prompt('Во сколько обойдется?');
         q = 0;
     while (q < 1)
     {
-        if ((typeof(a)) === 'string' && (typeof(a)) !== null && (typeof(b)) !== null
-        && a != '' && b != '' && a.length < 50) 
+        if ((typeof(a)) === 'string' && (typeof(a)) !== null && (typeof(b)) !== null &&
+        a != '' && b != '' && a.length < 50) 
         {
-            q++
             appData.expenses[a] = b;
-        }
+            console.log(appData[expenses[i]]);
+            q++;
+        } else
+          {
+            a = prompt('Введите обязательную статью расходов в этом месяце');
+            b = +prompt('Во сколько обойдется?');
+          }
     }
 }
-alert(appData.moneyData / 30);
+// console.log(appData.expenses[0]);
+// let x = appData.moneyData / 30;
+// if ()
