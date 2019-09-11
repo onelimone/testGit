@@ -26,7 +26,8 @@ for (let i = 0; i < 2; i++)
         a != '' && b != '' && a.length < 50) 
         {
             appData.expenses[a] = b;
-            console.log(appData[expenses[i]]);
+            console.log(a);
+            console.log(appData.expenses[a]);
             q++;
         } else
           {
