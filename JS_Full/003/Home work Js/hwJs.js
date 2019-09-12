@@ -9,33 +9,27 @@ var appData =
         income : [],
         saving : false
     };
-// let a1 = prompt('Введите обязательную статью расходов в этом месяце');
-//     a2 = prompt('Во сколько обойдется?');
-//     a3 = prompt('Введите обязательную статью расходов в этом месяце');
-//     a4 = prompt('Во сколько обойдется?');
-// appData.expenses.a1 = a2;
-// appData.expenses.a3 = a4;
-for (let i = 0; i < 2; i++)
-{
-    let a = prompt('Введите обязательную статью расходов в этом месяце');
-        b = +prompt('Во сколько обойдется?');
-        q = 0;
-    while (q < 1)
-    {
-        if ((typeof(a)) === 'string' && (typeof(a)) !== null && (typeof(b)) !== null &&
-        a != '' && b != '' && a.length < 50) 
-        {
-            appData.expenses[a] = b;
-            console.log(a);
-            console.log(appData.expenses[a]);
-            q++;
-        } else
-          {
+var r = [];
+for(var i = 0; i < 2; i++){
+    do{
+        var q = 0;
             a = prompt('Введите обязательную статью расходов в этом месяце');
             b = +prompt('Во сколько обойдется?');
-          }
+        if ( a.length <= 50 && a != "" &&
+            b != "0" && isNaN(b) != true){
+                r[i] = a;
+                q++;
+                appData.expenses[a] = b;
+            }
     }
+    while(q < 1);
+};
+var a = appData.moneyData / 30;
+alert(a);
+if (a < 100){
+    alert("Это слишком мало!");
+}else if (a > 100 && a < 300){
+    alert("Уже что то");
+}else if (a > 300){
+    alert("Очень много");
 }
-// console.log(appData.expenses[0]);
-// let x = appData.moneyData / 30;
-// if ()
